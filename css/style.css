@@ -26,7 +26,7 @@
   --color-filter: invert(1);
 
   /*=======Box shadow=======*/
-  --box-shadow: 0px 0px 20px rgba(0 0 0 0.1);
+  --box-shadow: 0px 0px 20px rgba(0 0 0 / 10%);
 
   /*=======Font size=======*/
   --small-font-size: 0.9em;
@@ -103,7 +103,7 @@ li{
   bottom: 20px;
   width: 45px;
   height: 45px;
-  background: var(--second-color);
+  background: var(--scroll-thumb-color);
   color: #fff;
   font-size: var(--small-font-size);
   border-radius: 3px;
@@ -1292,33 +1292,147 @@ footer a{
   }
 
   /*=======Footer=======*/
-  .footer-container .about,
-  .footer-container .info {
-    display: flex;
+
+.footer-container .about,
+.footer-container .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.footer-container .info ul {
+  display: flex; /* Ensure items are displayed in a row */
+  justify-content: center; /* Center the list items */
+  align-items: center;
+  flex-direction: row; /* Keep icons horizontal */
+  list-style: none;
+  padding: 0;
+}
+
+.footer-container .info ul li {
+  margin: 0 10px; /* Horizontal spacing between icons */
+}
+
+.footer-container .hr {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px 0 22px;
+}
+
+/* Responsive Design for Smaller Phones */
+@media screen and (max-width: 730px) {
+  .footer-container {
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
   }
 
-  .footer-container .info ul {
-    align-items: center;
-    flex-direction: column;
+  .footer-container .about h2 {
+    font-size: 2.5em;
   }
 
-  .footer-container .info ul li {
-    margin: 5px 0;
+  .footer-container .info ul,
+  .footer-container .follow ul {
+    flex-direction: row; /* Keep icons horizontal */
+    justify-content: center; /* Center the icons */
   }
 
-  .footer-container .hr {
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 10px 0 22px;
+  .footer-container .info a,
+  .footer-container .follow a {
+    margin: 10px;
+    font-size: 1.2em;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  /*=======Common styles for all sections on smaller screens=======*/
+  body {
+    margin: 5rem 0 0 0;
+  }
+
+  .section-title-01 {
+    font-size: 3em;
+  }
+
+  .section-title-02 {
+    font-size: 2em;
+    transform: translateY(-65px);
+  }
+
+  /*=======Home section=======*/
+  .home .home-container {
+    display: grid;
+  }
+
+  .home-container .home-img {
+    position: absolute;
+  }
+
+  .home-container .home-img img {
+    width: 65%;
+    transform: translate(80px, -180px);
+  }
+
+  .home .home-container .info {
+    font-size: 0.8rem;
+  }
+
+  .media-icons {
+    margin-bottom: 80px;
+  }
+
+  /*=======Get-in-touch section=======*/
+  .get-in-touch .contact-card {
+    display: grid;
+  }
+
+  .contact-card .title {
+    font-size: 0.6rem;
+    line-height: 40px;
+  }
+
+  .contact-card .contact-btn .btn {
+    font-size: 0.8rem;
   }
 }
 
-@media screen and (max-width: 730px) {
+/* Additional styles for very small screens (like iPhone SE) */
+@media screen and (max-width: 400px) {
+  .footer-container .about h2 {
+    font-size: 2em;
+  }
+
+  .footer-container .about p,
+  .footer-container .info h3,
+  .footer-container .follow h3 {
+    font-size: 1em;
+  }
+
+  .footer-container .info ul,
+  .footer-container .follow ul {
+    justify-content: center;
+    flex-direction: row; /* Keep icons horizontal */
+  }
+
+  .footer-container .info a,
+  .footer-container .follow a {
+    margin: 8px;
+    font-size: 1em;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+}
+ 
+}
+
+@media screen and (max-width: 730px) 
+{
   /*=======Common styles for all sections=======*/
 
   body {
